@@ -20,17 +20,60 @@ class Field {
 		this.positionRow = 0;
 		this.positionCol = 0;
 		this.field[this.positionRow][this.positionCol] = pathCharacter;
+		
 	}
 
 	// Print field //
 	print() {
 		clear();
 
+		for (let row of this.field) {
+			console.log(row);
+		}
+
 		// Replace with your own code //
-		console.log(this.field); // Please REMOVE this line before you start your code!
+		// console.log(this.field); // Please REMOVE this line before you start your code!
+
+		// console.log(this.map);
 	}
 
 	// Your Code //
+
+	// Method direction (ควบคุมทิศทาง)
+	direction () {
+		if (direction === 'a') {
+			this.moveRight()
+		}
+
+		else if (direction === 'd') {
+			this.moveLeft()
+		}
+
+		else if (direction === 'w') {
+			this.moveUp()
+		}
+
+		else if (direction === 's') {
+			this.moveDown()
+		}
+	}
+
+	moveRight() {
+		this.positionCol++
+	}
+	
+	moveLeft() {
+		this.positionCol--
+	}
+	
+	moveUp() {
+		this.positionRow--
+	}
+	
+	moveDown() {
+		this.positionRow++
+	}
+
 }
 
 // Game Mode ON
