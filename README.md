@@ -131,7 +131,43 @@
 
 ### Thinking Process
 
-1. // step 1
+1. // step 1 Make move direction method
+``` js
+  direction (direction) {
+		if (direction === 'a') {
+			this.moveRight()
+		} else if (direction === 'd') {
+			this.moveLeft()
+		} else if (direction === 'w') {
+			this.moveUp()
+		} else if (direction === 's') {
+			this.moveDown()
+		}
+	}
+
+   moveLeft() {
+    this.positionCol--
+  }
+
+	moveRight() {
+		this.positionCol++
+	}
+	
+	moveUp() {
+		this.positionRow--
+	}
+	
+	moveDown() {
+		this.positionRow++
+	}
+```
+ทำการสร้าง Method move direction โดยอาศัยการควบคุมทิศทางการเดินเหมือนกับเกม FPS คือ w,a,s,d ในการควบคุมทิศทาง โดยทำการสร้าง Method: direction กำหนดเงื่อนไขใน Method ว่า 
+  - ถ้าป้อน 'a' ใน CLI ก็จะเป็นการเดินไปทางซ้าย โดยค่าการควบคุมทิศทางไปทางซ้ายอยู่ใน Method: moveLeft ที่สร้างขึ้นมาเพื่อลดค่าใน Arr ที่เป็นลักษณะ col ที่อยู่ข้างในเงื่อนไข Method: direction
+  - ถ้าป้อน 'd' ใน CLI ก็จะเป็นการเดินไปทางซ้าย โดยค่าการควบคุมทิศทางไปทางซ้ายอยู่ใน Method: moveRight ที่สร้างขึ้นมาเพื่อเพิ่มค่าใน Arr ที่เป็นลักษณะ col ที่อยู่ข้างในเงื่อนไข Method: direction
+  - ถ้าป้อน 'w' ใน CLI ก็จะเป็นการเดินไปทางซ้าย โดยค่าการควบคุมทิศทางไปทางซ้ายอยู่ใน Method: moveRight ที่สร้างขึ้นมาเพื่อลดค่าใน Arr ที่เป็นลักษณะ row ที่อยู่ข้างในเงื่อนไข Method: direction
+  - ถ้าป้อน 'd' ใน CLI ก็จะเป็นการเดินไปทางซ้าย โดยค่าการควบคุมทิศทางไปทางซ้ายอยู่ใน Method: moveRight ที่สร้างขึ้นมาเพื่อลดค่าใน Arr ที่เป็นลักษณะ row ที่อยู่ข้างในเงื่อนไข Method: direction
+
+
 2. // step 2
 3. // ...
 4. // step n

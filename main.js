@@ -28,19 +28,15 @@ class Field {
 		clear();
 
 		for (let row of this.field) {
-			console.log(row);
+			console.log(row.join(' '));
 		}
-
-		// Replace with your own code //
-		// console.log(this.field); // Please REMOVE this line before you start your code!
-
-		// console.log(this.map);
 	}
 
 	// Your Code //
+	// Method move direction (ควบคุมทิศทาง)
+	direction (direction) {
+		this.field[this.positionRow][this.positionCol] = fieldCharacter;
 
-	// Method direction (ควบคุมทิศทาง)
-	direction () {
 		if (direction === 'a') {
 			this.moveRight()
 		}
@@ -56,16 +52,17 @@ class Field {
 		else if (direction === 's') {
 			this.moveDown()
 		}
+
+		this.field[this.positionRow][this.positionCol]	= pathCharacter
 	}
 
-	moveRight() {
-		this.positionCol++
-	}
-	
 	moveLeft() {
 		this.positionCol--
 	}
 	
+	moveRight() {
+		this.positionCol++
+	}
 	moveUp() {
 		this.positionRow--
 	}
@@ -73,9 +70,8 @@ class Field {
 	moveDown() {
 		this.positionRow++
 	}
-
+	
 }
-
 // Game Mode ON
 // Remark: Code example below should be deleted and use your own code.
 const newGame = new Field([
